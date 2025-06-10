@@ -10,4 +10,9 @@ public class TestController {
     public String hello() {
         return "Hello, Swagger!";
     }
-}♦
+
+    @GetMapping("/api/protected")
+    public String securedRoute() {
+        return "You're authenticated!";
+    }
+}

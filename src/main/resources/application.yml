@@ -27,3 +27,6 @@ springdoc:
 logging:
   level:
     org.springframework: INFO
+
+jwt:
+  secret: mysupersecretkeymysupersecretkey
