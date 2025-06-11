@@ -16,6 +16,7 @@ public class Payment {
 
     private String stripePaymentId;
     private String status;
+    private double amount;
 
     @OneToOne
     private Order order;
