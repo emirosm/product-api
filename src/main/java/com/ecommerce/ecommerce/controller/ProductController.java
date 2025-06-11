@@ -5,6 +5,7 @@ import com.ecommerce.ecommerce.dto.ProductResponseDTO;
 import com.ecommerce.ecommerce.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,6 +49,12 @@ public class ProductController {
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public void delete(@PathVariable Long id) {
         productService.deleteProduct(id);
+    }
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    @GetMapping("/category/{categoryId}")
+    public ResponseEntity<List<ProductResponseDTO>> getByCategory(@PathVariable Long categoryId) {
+        return ResponseEntity.ok(productService.getByCategory(categoryId));
     }
 }
 

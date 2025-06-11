@@ -64,6 +64,21 @@ public class ProductService {
         return mapToDto(product);
     }
 
+    public List<ProductResponseDTO> getByCategory(Long categoryId) {
+        List<Product> products = productRepository.findByCategoryId(categoryId);
+
+        return products.stream().map(product ->
+                new ProductResponseDTO(
+                        product.getId(),
+                        product.getName(),
+                        product.getDescription(),
+                        product.getPrice(),
+                        product.getCategory().getName()
+                )
+        ).toList();
+    }
+
+
     private ProductResponseDTO mapToDto(Product p) {
         return ProductResponseDTO.builder()
                 .id(p.getId())

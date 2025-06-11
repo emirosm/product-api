@@ -15,7 +15,7 @@ public class Payment {
     private Long id;
 
     private String stripePaymentId;
-    private String status; // SUCCESS, FAILED, etc.
+    private String status;
 
     @OneToOne
     private Order order;

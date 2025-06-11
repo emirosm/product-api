@@ -11,15 +11,12 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class OrderItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String productName;
+    private double unitPrice;
     private int quantity;
-    private double priceAtPurchase;
-
-    @ManyToOne
-    private Product product;
 
     @ManyToOne
     private Order order;
