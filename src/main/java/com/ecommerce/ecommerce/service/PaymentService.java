@@ -6,7 +6,6 @@ import com.ecommerce.ecommerce.entity.OrderStatus;
 import com.ecommerce.ecommerce.entity.Payment;
 import com.ecommerce.ecommerce.repository.OrderRepository;
 import com.ecommerce.ecommerce.repository.PaymentRepository;
-import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;

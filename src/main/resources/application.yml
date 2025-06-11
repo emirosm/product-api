@@ -30,3 +30,7 @@ logging:
 
 jwt:
   secret: mysupersecretkeymysupersecretkey
+
+stripe:
+  api:
+    key: ${STRIPE_API_KEY}
